@@ -1,17 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- Inputs with labels -->
+<ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-label>Email:</ion-label>
+  <ion-input type="email" placeholder="E-mail"></ion-input>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <ion-label position="floating">Senha:</ion-label>
+  <ion-input type="password" placeholder="Senha"></ion-input>
+
+</ion-item>
+<ion-button expand="block" class="ios button button-block button-solid ion-activatable ion-focusable hydrated">
+  Cadastrar</ion-button>
