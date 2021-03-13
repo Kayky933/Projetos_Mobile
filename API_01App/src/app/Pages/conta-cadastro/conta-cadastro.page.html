@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastrar Conta</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form [formGroup]="ionicForm" (ngSubmit)="cadastraConta()" novalidate>
+    <ion-item>
+      <ion-label>Nome do Credor:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data do Vencimento:</ion-label>
+      <ion-datetime displayForm="DD/MM/YYY" min="1900-01-01" formControlName="DataVencimento"></ion-datetime>
+    </ion-item>
+    <ion-label>Valor a Pagar:</ion-label>
+    <ion-input type="number" formControlName="ValorPagar"></ion-input>
+
+    <ion-item>
+      <ion-label>Data do Pagamento:</ion-label>
+      <ion-datetime displayForm="DD/MM/YYY" min="1900-01-01" max="Now" formControlName="DataPagamento"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" formControlName="Email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit" color="success">Cadastrar</ion-button>
+      <ion-button color="danger" (click)="gotoPage('home')">Cancelar</ion-button>
+    </ion-item>
+  </form>
+</ion-content>
