@@ -1,8 +1,8 @@
-import { ContaapiServices } from '../../Services/conta-servises.service';
+import { ContaapiService } from '../../Services/conta-servises.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-
+ 
 @Component({
   selector: 'app-conta-cadastro',
   templateUrl: './conta-cadastro.page.html',
@@ -12,8 +12,8 @@ export class ContaCadastroPage implements OnInit {
   errors: String = "";
   ionicForm: FormGroup;
 
-  constructor(private nvCtrl: NavController,
-    private contaApi: ContaapiServices,
+  constructor(private navCtrl: NavController,
+    private contaApi: ContaapiService,
     public formBuilder: FormBuilder) {
 
     this.ionicForm = this.formBuilder.group({
