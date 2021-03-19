@@ -2,12 +2,13 @@ import { ContaapiService } from '../../Services/conta-servises.service';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
- 
+
 @Component({
   selector: 'app-conta-cadastro',
   templateUrl: './conta-cadastro.page.html',
-  styleUrls: ['./conta-cadastro.page.scss'],
+  styleUrls: ['./conta-cadastro.page.scss']
 })
+
 export class ContaCadastroPage implements OnInit {
   errors: String = "";
   ionicForm: FormGroup;
@@ -36,7 +37,7 @@ export class ContaCadastroPage implements OnInit {
   cadastraConta() {
     console.log('chamou o cadastro' +
       this.ionicForm.value['nome'] +
-      this.ionicForm.value['dataVencimento']+
+      this.ionicForm.value['dataVencimento'] +
       this.ionicForm.value['valorPagar'] +
       this.ionicForm.value['dataPagar'] +
       this.ionicForm.value['email']);
@@ -45,8 +46,8 @@ export class ContaCadastroPage implements OnInit {
     this.contaApi.postConta(
       this.ionicForm.value['nome'],
       this.ionicForm.value['dataVencimento'],
-      this.ionicForm.value['valorPagar'] ,
-      this.ionicForm.value['dataPagar'] ,
+      this.ionicForm.value['valorPagar'],
+      this.ionicForm.value['dataPagar'],
       this.ionicForm.value['email'])
       .then((json) => {
         console.log(json);
