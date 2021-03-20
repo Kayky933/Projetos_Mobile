@@ -7,14 +7,12 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-  constructor(private navCtrl: NavController) {
-
-  }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
 
   }
-
+ 
   gotoPageCadastro(page) {
     this.navCtrl.navigateForward(page);
   }

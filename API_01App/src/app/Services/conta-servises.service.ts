@@ -8,14 +8,14 @@ export class ContaapiService {
 
   constructor(private http: HttpClient) { }
 
-  postConta(nome: string, dataVencimento: string, ValorPagar: string, dataPagamento: string, email: string) {
-    let url = 'https://localhost:5000/api/Conta/';
+  postConta(nome: string, dataVencimento: string, valorPagar: string, dataPagamento: string, email: string) {
+    let url = 'http://localhost:5000/api/Conta/';
 
     let data =
     {
       "nome": nome,
       "dataVencimento": dataVencimento,
-      "ValorPagar": ValorPagar,
+      "valorPagar": valorPagar,
       "dataPagamento": dataPagamento,
       "email": email
     };
@@ -24,12 +24,12 @@ export class ContaapiService {
   }
 
   getContatos() {
-    let url = 'https://localhost:5000/api/Conta/';
+    let url = 'http://localhost:5000/api/Conta/';
     return this.http.get(url).toPromise();
   }
 
   getContato(id) {
-    let url = 'https://localhost:5000/api/Conta/' + id;
+    let url = 'http://localhost:5000/api/Conta/' + id;
     return this.http.get(url).toPromise();
   }
 }
