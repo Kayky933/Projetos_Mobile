@@ -21,7 +21,7 @@ export class ContaCadastroPage implements OnInit {
       nome: ['', Validators.nullValidator],
       dataVencimento: [''],
       valorPagar: [''],
-      dataPagamento: [''],
+      dataPagamento: [''], 
       email: ['']
     });
   }
