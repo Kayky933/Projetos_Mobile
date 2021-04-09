@@ -15,7 +15,11 @@ export class ContaapiService {
     {
       "NomeDoCredor": nome,
       "DataDoVencimento": dataVencimento,
+<<<<<<< HEAD
       "ValorAPagar": valorPagar,
+=======
+      "valorAPagar": valorPagar,
+>>>>>>> 23bbe2e738a8d640dabc75f653e2c717e004b580
       "DataDoPagamento": dataPagamento,
       "Email": email
     };
