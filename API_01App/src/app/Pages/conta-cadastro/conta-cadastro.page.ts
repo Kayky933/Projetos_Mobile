@@ -21,7 +21,7 @@ export class ContaCadastroPage implements OnInit {
       nome: ['', Validators.nullValidator],
       dataVencimento: [''],
       valorPagar: [''],
-      dataPagamento: [''], 
+      dataPagamento: [''],
       email: ['']
     });
   }
@@ -35,11 +35,11 @@ export class ContaCadastroPage implements OnInit {
   }
 
   cadastraConta() {
-    console.log('chamou o cadastro' +
-      this.ionicForm.value['nome'] +
-      this.ionicForm.value['dataVencimento'] +
-      this.ionicForm.value['valorPagar'] +
-      this.ionicForm.value['dataPagar'] +
+    console.log('chamou o cadastro: ' + '\n' +
+      this.ionicForm.value['nome'] + '\n' +
+      this.ionicForm.value['dataVencimento'] + '\n' +
+      this.ionicForm.value['valorPagar'] + '\n' +
+      this.ionicForm.value['dataPagamento'] + '\n' +
       this.ionicForm.value['email']);
 
 
@@ -47,7 +47,7 @@ export class ContaCadastroPage implements OnInit {
       this.ionicForm.value['nome'],
       this.ionicForm.value['dataVencimento'],
       this.ionicForm.value['valorPagar'],
-      this.ionicForm.value['dataPagar'],
+      this.ionicForm.value['dataPagamento'],
       this.ionicForm.value['email'])
       .then((json) => {
         console.log(json);

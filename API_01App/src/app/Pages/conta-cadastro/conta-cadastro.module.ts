@@ -9,13 +9,13 @@ import { ContaCadastroPageRoutingModule } from './conta-cadastro-routing.module'
 import { ContaCadastroPage } from './conta-cadastro.page';
 
 @NgModule({
-  imports: [
+  imports: [ 
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
     ContaCadastroPageRoutingModule
-  ], 
+  ],  
   declarations: [ContaCadastroPage]
 })
 export class ContaCadastroPageModule {}

@@ -6,15 +6,15 @@ import { IonicModule } from '@ionic/angular';
 
 import { ContaConsultaPageRoutingModule } from './conta-consulta-routing.module';
 
-import { ContaConsultaPage } from './conta-consulta.page';
+import { ConsultaPage } from './conta-consulta.page';
 
 @NgModule({
   imports: [
-    CommonModule,
+    CommonModule, 
     FormsModule,
     IonicModule,
     ContaConsultaPageRoutingModule
   ],
-  declarations: [ContaConsultaPage]
+  declarations: [ConsultaPage] 
 })
 export class ContaConsultaPageModule {}

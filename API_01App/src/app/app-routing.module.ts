@@ -11,7 +11,7 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  {
+  {  
     path: 'conta-cadastro',
     loadChildren: () => import('./Pages/conta-cadastro/conta-cadastro.module').then( m => m.ContaCadastroPageModule)
   },
@@ -23,14 +23,7 @@ const routes: Routes = [
     path: 'consulta-conta',
     loadChildren: () => import('./Pages/conta-consulta/conta-consulta.module').then( m => m.ContaConsultaPageModule)
   },
-  {
-    path: 'conta-consulta',
-    loadChildren: () => import('./Pages/conta-consulta/conta-consulta.module').then( m => m.ContaConsultaPageModule)
-  },
-  {
-    path: 'conta-listagem',
-    loadChildren: () => import('./Pages/conta-listagem/conta-listagem.module').then( m => m.ContaListagemPageModule)
-  },
+  
 ];
 
 @NgModule({
