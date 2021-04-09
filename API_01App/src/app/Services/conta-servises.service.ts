@@ -13,11 +13,11 @@ export class ContaapiService {
 
     let data =
     {
-      "nome": nome,
-      "dataVencimento": dataVencimento,
-      "valorPagar": valorPagar,
-      "dataPagamento": dataPagamento,
-      "email": email
+      "NomeDoCredor": nome,
+      "DataDoVencimento": dataVencimento,
+      "valorAPagar": valorPagar,
+      "DataDoPagamento": dataPagamento,
+      "Email": email
     };
 
     return this.http.post(url, data).toPromise();
