@@ -1,0 +1,7 @@
+{
+  "name": "Alert_Project",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
