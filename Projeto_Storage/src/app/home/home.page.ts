@@ -1,70 +1,69 @@
 import { Component } from '@angular/core';
-import { AlertaController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.css'],
+  styleUrls: ['home.page.scss'],
 })
 export class HomePage {
 
-  constructor(public AlertaController: AlertaController) {}
+  constructor(public alertCtrl : AlertController) {}
 
-  async presentAlerta() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
-      header: 'Alertaa',
-      subHeader: 'Teste de Alerta',
-      message: 'esse é um teste de Alertaa feito no ionic.',
+  unread(item) {
+
+  }
+
+  async presentAlert() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
+      header: 'Alert',
+      subHeader: 'Subtitle',
+      message: 'This is an alert message.',
       buttons: ['OK']
     });
 
-    await Alerta.present();
+    await alert.present();
 
-    const { role } = await Alerta.onDidDismiss();
+    const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
 
-  async presentAlertaMultipleButtons() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
-      header: 'Alerta',
-      subHeader: 'Teste de Alerta',
-      message: 'esse é um teste de Alertaa feito no ionic.',
-      buttons: ['Cancel', 'Ok', 'Delete']
-    });
 
-    await Alerta.present();
+  async ShowAdd() {
+
+        const alert = await this.alertCtrl.create( {
+        header: 'O que deseja fazer ?',
+        inputs: [
+          {
+            name: 'taskToDo',
+            type: 'text',
+            placeholder: 'Comprar pão'
+          }
+        ],
+        buttons: [
+          {
+            text: 'Cancelar',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              console.log('clicked cancel');
+            }
+          },
+          {
+            text: 'Adicionar',
+            handler: (form) => {
+              //this.ShowAdd(form.taskToDo);
+            }
+          }
+        ]
+      });
+      await alert.present();
   }
 
-  async presentAlertaConfirm() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
-      header: 'Confirm!',
-      message: 'Message <strong>text</strong>!!!',
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: (blah) => {
-            console.log('Confirm Cancel: blah');
-          }
-        }, {
-          text: 'Okay',
-          handler: () => {
-            console.log('Confirm Okay');
-          }
-        }
-      ]
-    });
-
-    await Alerta.present();
-  }
-
-  async presentAlertaPrompt() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
+  async presentAlertPrompt() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
       header: 'Prompt!',
       inputs: [
         {
@@ -97,7 +96,7 @@ export class HomePage {
           name: 'name4',
           type: 'date',
           min: '2017-03-01',
-          max: '2018-01-12'
+          max: '2022-01-12'
         },
         // input date without min nor max
         {
@@ -127,7 +126,7 @@ export class HomePage {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
@@ -142,93 +141,13 @@ export class HomePage {
       ]
     });
 
-    await Alerta.present();
+    await alert.present();
   }
 
-  async presentAlertaRadio() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
-      header: 'Radio',
-      inputs: [
-        {
-          name: 'radio1',
-          type: 'radio',
-          label: 'Radio 1',
-          value: 'value1',
-          handler: () => {
-            console.log('Radio 1 selected');
-          },
-          checked: true
-        },
-        {
-          name: 'radio2',
-          type: 'radio',
-          label: 'Radio 2',
-          value: 'value2',
-          handler: () => {
-            console.log('Radio 2 selected');
-          }
-        },
-        {
-          name: 'radio3',
-          type: 'radio',
-          label: 'Radio 3',
-          value: 'value3',
-          handler: () => {
-            console.log('Radio 3 selected');
-          }
-        },
-        {
-          name: 'radio4',
-          type: 'radio',
-          label: 'Radio 4',
-          value: 'value4',
-          handler: () => {
-            console.log('Radio 4 selected');
-          }
-        },
-        {
-          name: 'radio5',
-          type: 'radio',
-          label: 'Radio 5',
-          value: 'value5',
-          handler: () => {
-            console.log('Radio 5 selected');
-          }
-        },
-        {
-          name: 'radio6',
-          type: 'radio',
-          label: 'Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 ',
-          value: 'value6',
-          handler: () => {
-            console.log('Radio 6 selected');
-          }
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-            console.log('Confirm Cancel');
-          }
-        }, {
-          text: 'Ok',
-          handler: () => {
-            console.log('Confirm Ok');
-          }
-        }
-      ]
-    });
 
-    await Alerta.present();
-  }
-
-  async presentAlertaCheckbox() {
-    const Alerta = await this.AlertaController.create({
-      cssClass: 'teste',
+  async presentAlertCheckbox() {
+    const alert = await this.alertCtrl.create({
+      cssClass: 'my-custom-class',
       header: 'Checkbox',
       inputs: [
         {
@@ -241,7 +160,6 @@ export class HomePage {
           },
           checked: true
         },
-
         {
           name: 'checkbox2',
           type: 'checkbox',
@@ -309,6 +227,8 @@ export class HomePage {
       ]
     });
 
-    await Alerta.present();
+    await alert.present();
   }
+
+
 }
