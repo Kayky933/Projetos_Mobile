@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Register Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <i-form [formGroup]="RegisterForm" (ngSubmit)="RegisterAccount()" novalidate>
+    <ion-item>
+      <ion-label>Nome do Credor:</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Data do Vencimento:</ion-label>
+      <ion-datetime
+        displayForm="DD/MM/YYY"
+        min="1900-01-01"
+        formControlName="dataVencimento"
+      ></ion-datetime>
+    </ion-item>
+    <ion-label>Valor a Pagar:</ion-label>
+    <ion-input type="number" formControlName="valorPagar"></ion-input>
+
+    <ion-item>
+      <ion-label>Data do Pagamento:</ion-label>
+      <ion-datetime
+        displayForm="DD/MM/YYYY"
+        min="1900-01-01"
+        formControlName="dataPagamento"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Email:</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-button type="submit" color="success">Cadastrar</ion-button>
+      <ion-button color="danger" (click)="GoToPage('home')"
+        >Cancelar</ion-button
+      >
+    </ion-item>
+  </i-form>
+</ion-content>
