@@ -24,30 +24,31 @@ export class HomePage {
 
   async openActions(task: any) {
     const actionSheet = await this.actionSheetCtrl.create({
-      header:"oque deseja fazer?",
-      buttons:[{
-        text: task.done? "Desmarcar":"Marcar",
-        icon: task.done? "radio-button-off":"checkmark-circle",
-        handler:()=>{
-          task.done = !task.done;
-          this.updatelocalStorage();
-        }
-      },
-    {
-      text: "Cancelar",
-      icon: "Close",
-      handler:()=>{
-        console.log("Cancel clicled");
-      }
-    }]        
-
+      header: 'oque deseja fazer?',
+      buttons: [
+        {
+          text: task.done ? 'Desmarcar' : 'Marcar',
+          icon: task.done ? 'radio-button-off' : 'checkmark-circle',
+          handler: () => {
+            task.done = !task.done;
+            this.updatelocalStorage();
+          },
+        },
+        {
+          text: 'Cancelar',
+          icon: 'Close',
+          handler: () => {
+            console.log('Cancel clicled');
+          },
+        },
+      ],
     });
     await actionSheet.present();
   }
-async delet(task:any){
-  this.tasks = this.tasks.filter((tasksArray)=> tasksArray != task);
-  this.updatelocalStorage();
-}
+  async delet(task: any) {
+    this.tasks = this.tasks.filter((tasksArray) => tasksArray != task);
+    this.updatelocalStorage();
+  }
   loadStorage() {
     let taskJson = localStorage.getItem('tasKDb');
     console.log(taskJson);
@@ -78,7 +79,7 @@ async delet(task:any){
         {
           name: 'taskToDo',
           type: 'text',
-          placeholder: 'Comprar pão',
+          placeholder: 'Informe algo!',
         },
       ],
       buttons: [

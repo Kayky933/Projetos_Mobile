@@ -24,12 +24,12 @@ export class AccountService {
     return this.http.post(url, data).toPromise();
   }
 
-  getContatos() {
+  GetAccounts() {
     let url = 'https://localhost:5001/api/conta';
     return this.http.get(url).toPromise();
   }
 
-  getContato(id) {
+  GetAccount(id) {
     let url = 'https://localhost:5001/api/conta' + id;
     return this.http.get(url).toPromise();
   }

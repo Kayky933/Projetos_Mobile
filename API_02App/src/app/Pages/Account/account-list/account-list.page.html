@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> APP ETEC - Contato </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">APP ETEC - Contato</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <h3>Lista com array</h3>
+    <table *ngFor="let ctt of Result" >
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Due date</th>
+        <th>Value</th>
+        <th>Pay Day</th>
+        <th>Email</th>
+      </tr>
+      <tr>
+        <td>{{ctt.id}}</td>
+        <td>{{ctt.nome}}</td>
+        <td>{{ctt.dataVencimento}}</td>
+        <td>{{ctt.valor}}</td>
+        <td>{{ctt.dataPagamento}}</td>
+        <td>{{ctt.email}}</td>
+      </tr>
+    </table>
+
+    <ion-button color="success" (click)="LoadData()">Consultar</ion-button>
+    <ion-button color="danger" (click)="GoToPage('home')">Cancelar</ion-button>
+  </div>
+</ion-content>
