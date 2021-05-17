@@ -10,7 +10,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   postAccount(nome: string, dataVencimento: string, valorPagar: string, dataPagamento: string, email: string) {
-    let url = 'https://localhost:5001/api/conta';
+    let url = 'https://localhost:5001/api/Conta'; 
 
     let data =
     {

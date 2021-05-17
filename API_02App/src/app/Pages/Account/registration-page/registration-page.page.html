@@ -4,7 +4,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <i-form [formGroup]="RegisterForm" (ngSubmit)="RegisterAccount()" novalidate>
+  <form [formGroup]="RegisterForm" (ngSubmit)="RegisterAccount()" novalidate>
     <ion-item>
       <ion-label>Nome do Credor:</ion-label>
       <ion-input type="text" formControlName="nome"></ion-input>
@@ -38,5 +38,5 @@
         >Cancelar</ion-button
       >
     </ion-item>
-  </i-form>
+  </form>
 </ion-content>

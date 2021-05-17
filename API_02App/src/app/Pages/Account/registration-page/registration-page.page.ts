@@ -1,5 +1,11 @@
+import { HttpHandler } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { AlertController, NavController } from '@ionic/angular';
 import { AccountService } from '../../../Service/account-sevice.service';
 
@@ -59,18 +65,33 @@ export class RegistrationPage implements OnInit {
       .then((json) => {
         console.log(json);
         this.Success();
-        this.GoToPage('home');
       })
       .catch((erro) => {
         console.log(erro.error);
         this.errors = erro.error[0];
+        this.Fail(JSON.stringify(erro.error));
       });
   }
   async Success() {
     let alert = await this.alertCtrl.create({
-      header: 'Success',      
-      subHeader: 'The registration was successful',
-      message: "<ion-icon name='checkmark-circle-outline'></ion-icon>",
+      header: 'Success',
+      message: '<p>The registration was successful</p>',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: () => {
+            this.GoToPage('home');
+          },
+        },
+      ],
+    });
+    await alert.present();
+  }
+  async Fail(errors) {
+    let alert = await this.alertCtrl.create({
+      header: 'Fail',
+      message: '<p>Ops, something is wrong</p>\n' + errors,
+      buttons: ['Ok'],
     });
     await alert.present();
   }
