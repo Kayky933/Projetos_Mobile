@@ -13,25 +13,28 @@
 
   <div id="container">
     <h3>Lista com array</h3>
-    <table *ngFor="let ctt of Result" >
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Due date</th>
-        <th>Value</th>
-        <th>Pay Day</th>
-        <th>Email</th>
-      </tr>
-      <tr>
-        <td>{{ctt.id}}</td>
-        <td>{{ctt.nome}}</td>
-        <td>{{ctt.dataVencimento}}</td>
-        <td>{{ctt.valor}}</td>
-        <td>{{ctt.dataPagamento}}</td>
-        <td>{{ctt.email}}</td>
-      </tr>
-    </table>
-
+    <ion-list *ngFor="let ctt of Result">
+      <ion-item>
+        <ion-label>Id: {{ctt.id_Conta}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Nome: {{ctt.nomeDoCredor}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data Vencimento: {{ctt.dataDoVencimento}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Valor: {{ctt.valorAPagar}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Data Pagamento: {{ctt.dataDoPagamento}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email: {{ctt.email}}</ion-label>
+      </ion-item>
+      <hr size="4px" color="Black">
+    </ion-list>
+    
     <ion-button color="success" (click)="LoadData()">Consultar</ion-button>
     <ion-button color="danger" (click)="GoToPage('home')">Cancelar</ion-button>
   </div>
